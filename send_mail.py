@@ -29,11 +29,11 @@ msg["Subject"] = par2
 body = par3
 msg.attach(MIMEText(body,'plain'))
 
-#using TLS
+#using TLS (comment out next two rows if use SSL)
 server = smtplib.SMTP("smtp.domain.tld", 587)
 server.starttls()
 
-#using SSL
+#using SSL (uncomment next row if use SSL)
 #server = smtplib.SMTP_SSL('smtp.domain.tld', 465)
 
 server.login(username,password)
