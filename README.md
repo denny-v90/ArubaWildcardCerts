@@ -36,7 +36,7 @@ password = "*************"
 server = smtplib.SMTP("smtp.domain.tld", 587)
 server.starttls()
 
-#using SSL (ucomment next row if use SSL)
+#using SSL (uncomment next row if use SSL)
 #server = smtplib.SMTP_SSL('smtp.domain.tld', 465)
 ```
 
@@ -54,5 +54,11 @@ certbot certonly --manual --preferred-challenges=dns --email your_mail@domain.tl
 &#x2705; Play with sleep time (seconds) at latest row in **aruba_auth_dns.sh**
 
 The reference of certbot is [HERE](https://eff-certbot.readthedocs.io/en/stable/using.html)
+
+# Scheduling
+If you want to automatically update your certificates add this line to crontab.
+```
+0 4 * * 7 /usr/bin/certbot renew --quiet
+```
 
 ## &#128512; Enjoy
