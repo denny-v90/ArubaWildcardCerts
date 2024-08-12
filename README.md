@@ -25,6 +25,21 @@ ARUBA_PSW='*************'
 ```
 &#x2757;&#x2757; Make sure the user created on Aruba has OTP disabled!
 
+You **MUST** edit **send_mail.py** and change some parameters:
+```
+emailfrom = "your_mail@domain.tld"
+
+username = "your_mail@domain.tld"
+password = "*************"
+
+#using TLS (comment out next two rows if use SSL)
+server = smtplib.SMTP("smtp.domain.tld", 587)
+server.starttls()
+
+#using SSL (ucomment next row if use SSL)
+#server = smtplib.SMTP_SSL('smtp.domain.tld', 465)
+```
+
 Next step is run **certbot** to generate your first wildcard certificate by automating the process.
 ```
 certbot certonly --manual --preferred-challenges=dns --email your_mail@domain.tld \
