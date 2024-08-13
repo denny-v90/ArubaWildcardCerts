@@ -1,4 +1,4 @@
-# ArubaWildcardCerts
+# Aruba Wildcard Certs
 Allows the automatic generation of wildcard certificates for your domain using the Aruba web API.
 
 The reference of Aruba web API you can find [here](https://api.arubabusiness.it/docs/#/Domains).
